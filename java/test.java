@@ -7,11 +7,11 @@ class Base{
         }
         private int fun(){
                 System.out.println("In Base fun "+x);
-                return 0;
+                return 0*x;
         }
         public int run(){
                 System.out.println("In Base run "+x);
-                return 3;
+                return 3*x;
         }
 }
 
@@ -22,7 +22,7 @@ class Derived extends Base{
         }
         private int fun(){
                 System.out.println("In Derived fun "+x);
-                return 1;
+                return 10*x;
         }
         public int run(){
                 System.out.println("In Derived run "+x);
@@ -37,13 +37,14 @@ class Derived1 extends Derived{
         }
         public int fun(){
                 System.out.println("In Derived1 fun "+x);
-                return 2;
+                return 2*x;
         }
 }
 
 public class test {
         public static void main(String[] args){
                 Base ref=new Derived1();
+                // ref=new Derived();
                 System.out.println(ref.run());
         }
 }
