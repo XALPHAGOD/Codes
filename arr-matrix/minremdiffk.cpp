@@ -23,7 +23,7 @@ int main(){
         cin>>arr[i];
     }
     sort(arr,arr+n);
-    int mini= n;
+    int mini= (n==1)?0:n;
     // cout<<check(arr, 2, n-1, 3, 0);
     for(int i=0;i<n-1;i++){
         int temp=check(arr,i+1,n-1,arr[i],k);
