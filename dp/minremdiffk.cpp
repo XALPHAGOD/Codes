@@ -8,7 +8,7 @@ int solve(int arr[], int s, int e, int k){
         return dp[s][e];
     if(arr[e]-arr[s]<=k)    //if range satisfies condition, no removal
         return 0;
-    return dp[s][e]=1+ min(solve(arr, s+1, e, k),solve(arr, s, e-1, k));    // 1 elem removal+ min of removal from both halves
+    return dp[s][e]=1+ min(solve(arr, s+1, e, k),solve(arr, s, e-1, k));    // 1 elem removal from either half + min of removal from other half
 }
 int main(){
     memset(dp,-1,sizeof(dp));

@@ -10,14 +10,14 @@ int main()
 	int arr[n];
 	for(i=0;i<n;i++)
 		cin>>arr[i];
-	int max_so_far=INT_MIN,curr_max=0;
+	int max_sum_so_far=INT_MIN,max_sum_till_here=0;		//msf=INT_MIN to work for all -ve values
 	for(i=0;i<n;i++)
 	{
-		curr_max+=arr[i];
-		if(curr_max<arr[i])
-			curr_max=arr[i];	
-		if(max_so_far<curr_max)
-			max_so_far=curr_max;
+		max_sum_till_here+=arr[i];
+		if(max_sum_till_here<arr[i])
+			max_sum_till_here=arr[i];	
+		if(max_sum_so_far<max_sum_till_here)
+			max_sum_so_far=max_sum_till_here;
 	}
-	cout<<max_so_far;
+	cout<<max_sum_so_far;
 }
