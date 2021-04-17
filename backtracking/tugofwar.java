@@ -9,7 +9,7 @@ class tugofwar{
         if(taken >= (n+1)/2 || pos==n){
             diff=Integer.min(diff, Math.abs(sum - 2*sumtaken));
             count++;
-            System.out.println(Math.abs(sum - 2*sumtaken));
+            System.out.print(Math.abs(sum - 2*sumtaken)+" ");
             return;
         }
         backtrack(arr, pos+1, n, sum, taken, sumtaken);
@@ -25,7 +25,7 @@ class tugofwar{
         for(int i=0;i<n;sum+=arr[i],i++)
             arr[i]=sc.nextInt();
         // boolean[] take=new boolean[n];
-        backtrack(arr, 0, n,sum, 0, 0);
+        backtrack(arr, 0, n,sum, 0, 0); 
         System.out.println("xxxxx"+diff+" "+count);
     }
 }

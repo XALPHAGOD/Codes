@@ -17,6 +17,9 @@ class Der extends Bse{
     public void pr(){
         System.out.println("Der");
     }
+    public void pr2(){
+        System.out.println("Der2");
+    }
 } 
 class xyz {
     static public void main(String[] args){
@@ -35,13 +38,17 @@ class xyz {
         Bse r=e;
         
         System.out.println(b.x+" "+d.x+" "+o.x+" "+r.x);
-        b.pr();
+        // b.pr();
         d.pr();
         o.pr();
         r.pr();
 
-        r=b;
-        System.out.println(r.x);
-        r.pr();
+        d.pr2();
+        // o.pr2();
+        // r.pr2();
+
+        // r=b;
+        // System.out.println(r.x);
+        // r.pr();
     }
 }
