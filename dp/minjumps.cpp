@@ -2,27 +2,32 @@
 using namespace std;
 int main()
 {
-	int dp[n],mr=arr[0];
+    int n;
+    cin>>n;
+    int arr[n];
     for(int i=0;i<n;i++)
-        dp[i]=INT_MAX;
-    dp[0]=0;
-    for(int i=1;i<n;i++)
-    {
-        if(mr<i)
+        cin>>arr[i];
+	
+    int dp[n];
+    int stepsLeft=1,mR=0,stepsRequired=0,flag=0;
+    for(int i=0;i<n;i++){
+        stepsLeft--;
+        mR=max(mR, arr[i]+i);
+        // cout<<stepsRequired<<" ";
+        if(mR==i)
             break;
-        mr=max(mr,arr[i]+i);
-        for(int j=0;j<i;j++)
-        {
-            if(arr[j]+j>=i)
-                dp[i]=min(dp[i],dp[j]+1);
+        if(mR>=(n-1)){
+            flag=1;
+            break;
+        }
+        if(stepsLeft==0){
+            stepsLeft=mR-i;
+            stepsRequired++;
         }
     }
-    //for(int i=0;i<n;i++)
-      //  cout<<dp[i]<<" ";
-    //cout<<mr<<"x";
-    if(mr<(n-1))
-        return -1;
-    if(dp[n-1]>0)
-        return dp[n-1];
-    return -1;
+    // cout<<"\n";
+    if(flag)
+        cout<<stepsRequired+1;
+    else
+        cout<<-1;
 }

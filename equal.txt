@@ -1,0 +1,23 @@
+x=y	xl=x.length yl=y.length
+1 2 3
+123 24 15 6
+
+yl=3 if curlevel w.length<yl then only go right
+1 1 1 1 1
+1						1
+1				2		 		11
+1			3	      21		12		111	
+1		 n 4      31      22      211	     13    121	    112      1111	
+1		  5 41  32 311  23 221  212  2111 14  131 122 1211 113 1121  1112 11111
+			    y       y    y     x       y   y    x   y    x     x    x 
+
+2 3
+2						2
+3					5		23
+
+
+max store 2(xl-1)
+1 1 1
+1					+	1    concat
+1			    +   2 concat		    +   11 concat
+1			3		21		12		111	
