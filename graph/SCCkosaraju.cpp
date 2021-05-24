@@ -11,8 +11,9 @@ void dfs(int src,vector<int> adj[],vector<bool> &vis)
         if(!vis[x])
             dfs(x,adj,vis);
     }
-    order.pb(src);
-}void rvdfs(int src,vector<int> adj[],vector<bool> &vis)
+    order.pb(src);      //finishing time alt to stack
+}
+void rvdfs(int src,vector<int> adj[],vector<bool> &vis)
 {
     vis[src]=true;
     for(auto x:adj[src])
@@ -24,14 +25,14 @@ void dfs(int src,vector<int> adj[],vector<bool> &vis)
 int main()
 {
     int n,e;
-    cin>>n>>e;      //#vertices #edges
-    vector<int> adj[n],rev[n];  //adj graph and rev-adj graph
+    cin>>n>>e;
+    vector<int> adj[n],rev[n];
     for(int i=0;i<e;i++)
     {
         int x,y;
         cin>>x>>y;
         adj[x].pb(y);
-        rev[y].pb(x);
+        rev[y].pb(x);       //check
     }
     vector<bool> vis(n),vis1(n);
     for(int i=0;i<n;i++)

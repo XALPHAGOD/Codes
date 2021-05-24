@@ -35,7 +35,7 @@ using namespace std;
 
          for(auto x:adj[p.second])
          {
-             if(!vis[x.first])
+             if(!vis[x.first])      //if vis means previously visited with lower path value
              {
                  pq.push({x.second+p.first,x.first});
              }
